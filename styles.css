@@ -1,47 +1,56 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
 }
 
 body {
     background-image: url("img/clima.jpg");
-     background-size: cover;
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem de fundo */
     background-attachment: fixed;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* min-height é melhor que height para evitar cortes */
     width: 100vw;
+    padding: 20px; /* Margem de segurança para telas pequenas */
 }
 
 .box {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.85); /* Leve transparência fica elegante */
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     max-width: 450px;
-    display: flex;
     border-radius: 20px;
-    align-items: center;
-    justify-content: center;
     padding: 25px;
-    gap: 5px;
+    text-align: center; /* Centraliza o texto interno */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
-.inputText{
-    width: 400px;
-    height: 30px;
+.box2 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 10px;
+    width: 100%;
+}
+
+.inputText {
+    flex: 1; /* Faz o input ocupar o espaço restante */
+    min-width: 0; /* Evita que o flex-item transborde */
+    height: 45px;
     border-radius: 30px;
     border: none;
-    padding: 10px;
-    font-size: 16px;
+    padding: 0 20px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    outline: none;
     resize: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-size: 20px;
+    border: none;
 }
 
 textarea::-webkit-scrollbar {
@@ -53,29 +62,51 @@ textarea:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); 
 }
-
-.voz{
+/* Ajuste nos botões para manter proporção */
+.voz, .pesquisa {
     background-color: rgb(0, 0, 0);
-    border: 3px solid white;
-    padding: 10px;
-    border-radius: 100%;
+    border: 2px solid white;
+    width: 45px;  /* Tamanho fixo para os botões circulares */
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     color: white;
-    font-size: 1px;
     cursor: pointer;
-}
-.voz:hover{
-    background-color: rgb(35, 35, 35);
+    transition: 0.3s;
+    flex-shrink: 0; /* Impede o botão de esmagar */
 }
 
-.pesquisa{
-    background-color: rgb(0, 0, 0);
-    border: 3px solid white;
-    padding: 10px;
-    border-radius: 100%;
-    color: white;
-    font-size: 1px;
-    cursor: pointer;
+.voz:hover, .pesquisa:hover {
+    background-color: rgb(50, 50, 50);
 }
-.pesquisa:hover{
-    background-color: rgb(35, 35, 35);
+
+/* Melhorias na tipografia */
+.titulo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.temp {
+    font-size: clamp(3rem, 10vw, 4rem); /* Tamanho de fonte fluido */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.graus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Media Query para celulares muito pequenos */
+@media (max-width: 400px) {
+    .box {
+        padding: 15px;
+    }
+    .inputText {
+        font-size: 16px;
+    }
 }
