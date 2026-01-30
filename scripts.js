@@ -6,7 +6,7 @@ async function verificarClima() {
 
     if (Local === "") {
         inform.innerHTML = "<p>Por favor, digite uma cidade.</p>";
-        return; // Para a execução aqui mesmo
+        return;
     }
 
     try {
