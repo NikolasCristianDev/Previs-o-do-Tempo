@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("img/clima.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.box {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 5px;
+}
+
+.inputText{
+    width: 400px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea:focus {
+  border-color: #ff6600; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); 
+}
+
+.voz{
+    background-color: rgb(0, 0, 0);
+    border: 3px solid white;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+    font-size: 1px;
+    cursor: pointer;
+}
+.voz:hover{
+    background-color: rgb(35, 35, 35);
+}
+
+.pesquisa{
+    background-color: rgb(0, 0, 0);
+    border: 3px solid white;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+    font-size: 1px;
+    cursor: pointer;
+}
+.pesquisa:hover{
+    background-color: rgb(35, 35, 35);
+}
