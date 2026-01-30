@@ -22,7 +22,7 @@ body {
     color: white;
     width: 100%;
     max-width: 450px;
-    border-radius: 20px;
+    border-radius: 50px;
     padding: 25px;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -101,6 +101,23 @@ body {
     gap: 10px;
 }
 
+.button-ia{
+    width: 100%;
+    padding: 20px;
+    font-size: 15px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-ia:hover{
+    background: rgb(48, 48, 255);
+    transition: 0.3s;
+}
 @media (max-width: 400px) {
     .box {
         padding: 15px;
