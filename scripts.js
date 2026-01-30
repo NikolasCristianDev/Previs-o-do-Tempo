@@ -1,4 +1,3 @@
-
 async function verificarClima() {
     let key = "78fbcd3d73a22f94b6ab97865846d89c"
     let Local = document.querySelector(".inputText").value
@@ -32,5 +31,18 @@ async function verificarClima() {
         `
     } catch (error) {
         inform.innerHTML = "<p>Cidade não encontrada. Tente novamente.</p>"
+    }
+}
+
+function transcricao(){
+    let voz = new window.webkitSpeechRecognition()
+    voz.lang = "pt-BR"
+    voz.start()
+
+    voz.onresult = function(evento){
+        let textoTranscrito = evento.results[0][0].transcript
+        const buscaLimpa = textoTranscrito.replace(/\./g, '');
+        document.querySelector(".inputText").value = buscaLimpa;
+        verificarClima()
     }
 }

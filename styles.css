@@ -1,30 +1,30 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+    box-sizing: border-box;
 }
 
 body {
     background-image: url("img/clima.jpg");
     background-size: cover;
-    background-position: center; /* Centraliza a imagem de fundo */
+    background-position: center;
     background-attachment: fixed;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* min-height é melhor que height para evitar cortes */
+    min-height: 100vh;
     width: 100vw;
-    padding: 20px; /* Margem de segurança para telas pequenas */
+    padding: 20px;
 }
 
 .box {
-    background-color: rgba(0, 0, 0, 0.85); /* Leve transparência fica elegante */
+    background-color: rgba(0, 0, 0, 0.85);
     color: white;
     width: 100%;
     max-width: 450px;
     border-radius: 20px;
     padding: 25px;
-    text-align: center; /* Centraliza o texto interno */
+    text-align: center;
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
@@ -39,8 +39,8 @@ body {
 }
 
 .inputText {
-    flex: 1; /* Faz o input ocupar o espaço restante */
-    min-width: 0; /* Evita que o flex-item transborde */
+    flex: 1;
+    min-width: 0;
     height: 45px;
     border-radius: 30px;
     border: none;
@@ -50,23 +50,24 @@ body {
     font-size: 18px;
     outline: none;
     resize: none;
-    border: none;
+    line-height: 45px; 
+    display: flex;
+    align-items: center;
+}
+.inputText::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
-textarea::-webkit-scrollbar {
-  width: 10px;
+.inputText:focus {
+    border: 2px solid #ff6600;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); 
 }
-
-textarea:focus {
-  border-color: #ff6600; 
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); 
-}
-/* Ajuste nos botões para manter proporção */
 .voz, .pesquisa {
     background-color: rgb(0, 0, 0);
     border: 2px solid white;
-    width: 45px;  /* Tamanho fixo para os botões circulares */
+    width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
@@ -75,21 +76,20 @@ textarea:focus {
     color: white;
     cursor: pointer;
     transition: 0.3s;
-    flex-shrink: 0; /* Impede o botão de esmagar */
+    flex-shrink: 0
 }
 
 .voz:hover, .pesquisa:hover {
     background-color: rgb(50, 50, 50);
 }
 
-/* Melhorias na tipografia */
 .titulo {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .temp {
-    font-size: clamp(3rem, 10vw, 4rem); /* Tamanho de fonte fluido */
+    font-size: clamp(3rem, 10vw, 4rem);
     margin: 10px 0;
     font-weight: bold;
 }
@@ -101,7 +101,6 @@ textarea:focus {
     gap: 10px;
 }
 
-/* Media Query para celulares muito pequenos */
 @media (max-width: 400px) {
     .box {
         padding: 15px;
